@@ -1,3 +1,28 @@
-# This file stores configurations for your Shopify app.
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
+name = "original-coffee-flexybox"
+client_id = "66753cc7eacfeaf48fce46651e8fcbcf"
+application_url = "https://constitution-dj-errors-daddy.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://constitution-dj-errors-daddy.trycloudflare.com/auth/callback",
+  "https://constitution-dj-errors-daddy.trycloudflare.com/auth/shopify/callback",
+  "https://constitution-dj-errors-daddy.trycloudflare.com/api/auth/callback",
+  "https://constitution-dj-errors-daddy.trycloudflare.com/.shopify/graphiql/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-10"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "testjanko1994.myshopify.com"
