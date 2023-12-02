@@ -28,7 +28,10 @@ export default function App() {
     </AppProvider>
   );
 }
-const order = new shopify.rest.Order({session: session});
+const { admin, session } = await authenticate.admin(request);
+
+const order = new admin.rest.resources.Order({session: session});
+
 order.line_items = [
   {
     "title": "Big Brown Bear Boots",
@@ -56,6 +59,7 @@ order.currency = "EUR";
 await order.save({
   update: true,
 });
+
 
 // Shopify needs Remix to catch some thrown responses, so that their headers are included in the response.
 export function ErrorBoundary() {
